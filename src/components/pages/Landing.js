@@ -7,7 +7,6 @@ const Landing = () => {
     document.title="Meetcute"
     return(
         <div>
-            {/* <Navbar /> */}
             <LandingPage />
         </div>
     )

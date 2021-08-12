@@ -61,8 +61,8 @@ const LandingPage = () => {
             </div>
             <div className="heroContainer1">
                     <div className="textContainer">
-                        <h1 style={{fontFamily: "Inter", color: "white", fontWeight: "700"}}>
-                            welcome to meetcute.
+                        <h1 style={{fontFamily: "Inter", color: "white",}}>
+                            come make memories with meetcute.
                         </h1>
                         <h5 style={{marginLeft: 5, fontWeight: "300", fontFamily: "Inter", color: "white", marginTop: 20}}>
                             we've got a little something for everyone.

@@ -19,7 +19,7 @@ const Teams = () => {
                 </div>
             </div>
             <div className="teamContainer2">
-                <h2 style={{marginTop: 90}}>this is the a-team.</h2>
+                <h2 style={{marginTop: 90}}>this is the a-team. it all began here.</h2>
                 <div className="rowComp">
                     <div className="nameComp">
                         <h2 className="gradientText">

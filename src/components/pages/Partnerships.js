@@ -1,16 +1,16 @@
 import React, {useRef} from 'react'
 import NavbarComp from '../Navbar'
-import News from '../News'
+import Advertising from '../Advertising'
 
 
-const Newsroom = () => {
+const Partnerships = () => {
     document.title="Meetcute"
     return(
         <div>
             <NavbarComp />
-            <News />
+            <Advertising />
         </div>
     )
 }
 
-export default Newsroom;
+export default Partnerships;
