@@ -26,17 +26,26 @@
 
 
 .cardContainers {
-    height: 100vh;
-    width: 80%;
+    height: 60vh;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
+.cardContainers > h1 {
+    font-family: "Inter";
+    font-size: 40px;
+    font-weight: "700";
+    background: -webkit-linear-gradient(right, #4a58ed, #d0a3e3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 10px 10px 10px 10px;
+}
 
 .cards {
-    height: 700px;
-    width: 550px;
+    height: 300px;
+    width: 700px;
     background: linear-gradient(to top right, #005C97, #363795);
     border-radius: 30px;
     box-shadow: 0 0 5px 5px lightgray;
@@ -55,4 +64,44 @@
     align-items: center;
     justify-content: center;
     background-color: #f5f5f5;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .advertisingContainer1 {
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .advertisingContainer1 > h1 {
+        font-family: "Inter";
+        font-weight: 500;
+        text-align: center;
+        font-size: 72px;
+        background: -webkit-linear-gradient(right, #4a58ed, #d0a3e3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .advertisingContainer2 {
+        height: 200vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .advertisingContainer2 > h2 {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 30px;
+    }
 }

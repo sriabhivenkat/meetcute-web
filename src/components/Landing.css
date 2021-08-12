@@ -28,3 +28,57 @@
 .textContainer {
     text-align: center;
 }
+
+.smallScreen {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    overflow-x: scroll;
+}
+@media only screen and (max-width: 768px) {
+    .heroContainer {
+        height: 90vh;
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: linear-gradient(to bottom right, #B24592, #F15F79);
+    }
+    .heroContainer1{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: linear-gradient(to bottom right, #B24592, #F15F79);
+        align-items: center;
+        padding: 20px 20px 20px 20px;
+    }
+    .navbar1 {
+        height: 10vh;
+        width: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid white; */
+    }
+    .smallScreen {
+        height: 10vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 20px;
+        align-items: center;
+        overflow-x: scroll;
+    }
+}

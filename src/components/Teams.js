@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 const Teams = () => {
     return(
-        <>
+        <div className="teamsMega">
             <div className="teamContainer1">
                 <h1>meetcute is a group project.</h1>
                 <div className="explanation">
@@ -19,7 +19,7 @@ const Teams = () => {
                 </div>
             </div>
             <div className="teamContainer2">
-                <h2 style={{marginTop: 90}}>this is the a-team. it all began here.</h2>
+                <h2>this is the a-team. it all began here.</h2>
                 <div className="rowComp">
                     <div className="nameComp">
                         <h2 className="gradientText">
@@ -61,7 +61,7 @@ const Teams = () => {
                     check open roles
                 </Button>
             </div>
-        </>
+        </div>
     )
 }
 
