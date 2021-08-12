@@ -1,0 +1,30 @@
+.heroContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #B24592, #F15F79);
+}
+.heroContainer1{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #B24592, #F15F79);
+    align-items: center;
+}
+.navbar1 {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+
+.textContainer {
+    text-align: center;
+}
