@@ -71,6 +71,19 @@ const NavbarComp = () => {
                 >
                     partnerships
                 </Link>
+                <Link
+                    to="/market"
+                    style={{
+                        fontFamily: "Inter",
+                        fontWeight: "600",
+                        color: "white",
+                        fontSize: 20,
+                        textDecoration: "none",
+                        marginLeft: 100
+                    }}
+                >
+                    market
+                </Link>
             </div>
             :
             <div className="navbarSmallScreen">

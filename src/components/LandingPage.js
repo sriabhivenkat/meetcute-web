@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './Landing.css';
-
+import Button from 'react-bootstrap/Button';
 
 const LandingPage = () => {
     return(
@@ -123,6 +123,9 @@ const LandingPage = () => {
                         <h5 style={{marginLeft: 5, fontWeight: "200", fontFamily: "Inter", color: "white", marginTop: 20}}>
                             we've got a little something for everyone.
                         </h5>
+                        <Button variant="outline-light" size="small" href="/market" style={{fontFamily: "Inter", marginTop: 10,}}>
+                            check out our merch!
+                        </Button>
                     {/* </div> */}
             </div>
         </div>

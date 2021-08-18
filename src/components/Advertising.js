@@ -1,8 +1,9 @@
 import React, {useRef} from 'react'
-import { CardGroup } from 'react-bootstrap';
+import { CardGroup, Image } from 'react-bootstrap';
 import './Advertising.css'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
+import image from "../assets/images/image.jpeg"
 
 const Advertising = () => {
     return(
@@ -11,7 +12,7 @@ const Advertising = () => {
                 <h1 style={{fontFamily: "Inter"}}>advertise or partner with us.</h1>
             </div>
             <div className="advertisingContainer2">
-                    <h2 >
+                    <h2>
                         make meetcute work for you.
                     </h2>
                     <div className="cardContainers">
@@ -27,6 +28,10 @@ const Advertising = () => {
                             <h4 style={{color: "white", fontWeight: "300"}}>based on the type of ad, we will show your products off for you to the correct type of people, at a much cheaper price than the other major online advertisers</h4>
                         </div> */}
                         <h1 style={{color: "white", fontSize: 45}}>reach your audience with Meetcute Views.</h1>
+                        <Image 
+                            src={image}
+                            style={{height: 500, width: 375}}
+                        />
                     </div>
                     <div className="cardContainers">
                         <h1 style={{color: "white", fontSize: 45, textAlign: "right", marginRight: 40}}>generate revenue at Meetcute Festivals.</h1>

@@ -38,6 +38,9 @@ const Investor = () => {
                     <Tab eventKey="financial" title="financials">
                         <h1 style={{color: "lightgray"}}>no data yet.</h1> 
                     </Tab>
+                    <Tab eventKey="projections" title="projections">
+                        <h1 style={{color: "lightgray"}}>no data yet.</h1> 
+                    </Tab>
                 </Tabs>
             </div>
         </>

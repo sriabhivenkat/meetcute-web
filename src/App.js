@@ -6,6 +6,8 @@ import Newsroom from './components/pages/Newsroom';
 import Investors from './components/pages/Investors';
 import Team from './components/pages/Team';
 import Partnerships from './components/pages/Partnerships';
+import Careers from './components/pages/Careers';
+import Marketplace from './components/pages/Marketplace';
 
 function App() {
   return(
@@ -17,6 +19,8 @@ function App() {
           <Route path='/investors' exact component={Investors} />
           <Route path='/team' exact component={Team} />
           <Route path='/advertising' exact component={Partnerships} />
+          <Route path='/careers' exact component={Careers} />
+          <Route path='/market' exact component={Marketplace} />
         </div>
       </Router>
     </>
