@@ -59,7 +59,7 @@ const LogIn = () => {
                             disabled={loading}
                             className="loginButton"
                         >
-                            {loading ? <span>Loading</span> : <span>send magic link</span>}
+                            {loading ? <span>Loading</span> : <span>let's go!</span>}
                         </Button>
                     </div>
                 </div>
