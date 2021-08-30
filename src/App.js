@@ -8,8 +8,10 @@ import Team from './components/pages/Team';
 import Partnerships from './components/pages/Partnerships';
 import Careers from './components/pages/Careers';
 import Marketplace from './components/pages/Marketplace';
+import Login from './components/pages/Login';
 
 function App() {
+  
   return(
     <>
       <Router>
@@ -21,6 +23,7 @@ function App() {
           <Route path='/advertising' exact component={Partnerships} />
           <Route path='/careers' exact component={Careers} />
           <Route path='/market' exact component={Marketplace} />
+          <Route path='/login' exact component={Login} />
         </div>
       </Router>
     </>
