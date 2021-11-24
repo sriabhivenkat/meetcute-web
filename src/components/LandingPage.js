@@ -8,18 +8,6 @@ const LandingPage = () => {
         <div className="heroContainer">
             {window.innerWidth > 768 ?
                 <div className="navbar1">
-                    {/* <Link 
-                        to="/newsroom"
-                        style={{
-                            fontFamily: "Inter",
-                            fontWeight: "600",
-                            color: "white",
-                            fontSize: 20,
-                            textDecoration: "none"
-                        }}
-                    >
-                        newsroom
-                    </Link> */}
                     <Link
                         to="/team"
                         style={{
@@ -58,10 +46,23 @@ const LandingPage = () => {
                     >
                         partnerships
                     </Link>
+                    <Link 
+                        to="/legal"
+                        style={{
+                            fontFamily: "Inter",
+                            fontWeight: "600",
+                            color: "white",
+                            fontSize: 20,
+                            marginLeft: 100,
+                            textDecoration: "none"
+                        }}
+                    >
+                        legal
+                    </Link>
                 </div>
                 :
                 <div className="smallScreen">
-                    <Link 
+                    {/* <Link 
                         to="/newsroom"
                         style={{
                             fontFamily: "Inter",
@@ -72,7 +73,7 @@ const LandingPage = () => {
                         }}
                     >
                         newsroom
-                    </Link>
+                    </Link> */}
                     <Link
                         to="/team"
                         style={{
@@ -112,6 +113,18 @@ const LandingPage = () => {
                     >
                         partnerships
                     </Link>
+                    <Link 
+                        to="/legal"
+                        style={{
+                            fontFamily: "Inter",
+                            fontWeight: "600",
+                            color: "white",
+                            fontSize: 20,
+                            textDecoration: "none"
+                        }}
+                    >
+                        legal
+                    </Link>
                 </div>
             }
             <div className="heroContainer1">
@@ -122,9 +135,9 @@ const LandingPage = () => {
                         <h5 style={{marginLeft: 5, fontWeight: "200", fontFamily: "Inter", color: "white", marginTop: 20}}>
                             we've got a little something for everyone.
                         </h5>
-                        <Button variant="outline-light" size="small" href="/legal" style={{fontFamily: "Inter", marginTop: 10,}}>
+                        {/* <Button variant="outline-light" size="small" href="/legal" style={{fontFamily: "Inter", marginTop: 10,}}>
                             privacy policy
-                        </Button>
+                        </Button> */}
                     {/* </div> */}
             </div>
         </div>

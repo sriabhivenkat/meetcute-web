@@ -70,8 +70,8 @@ const NavbarComp = () => {
                 >
                     partnerships
                 </Link>
-                {/* <Link
-                    to="/market"
+                <Link
+                    to="/legal"
                     style={{
                         fontFamily: "Inter",
                         fontWeight: "600",
@@ -81,8 +81,8 @@ const NavbarComp = () => {
                         marginLeft: 100
                     }}
                 >
-                    market
-                </Link> */}
+                    legal
+                </Link>
             </div>
             :
             <div className="navbarSmallScreen">
