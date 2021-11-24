@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f5f5f5;
+    background-color: white;
 }
 .advertisingContainer1 > h1 {
     font-family: "Inter";
@@ -47,12 +47,27 @@
 .cards {
     height: 300px;
     width: 700px;
-    background: linear-gradient(to top right, #005C97, #363795);
+    background: linear-gradient(to top right, #fc00ff, #00dbde);
     border-radius: 30px;
     box-shadow: 0 0 5px 5px lightgray;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 30px 30px 30px 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.cards1 {
+    height: 300px;
+    width: 700px;
+    background: linear-gradient(to bottom right, #FEAC5E, #C779D0, #4BC0C8);
+    border-radius: 30px;
+    box-shadow: 0 0 5px 5px lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 30px 30px 30px 30px;
     margin-right: 30px;
     margin-top: 30px;

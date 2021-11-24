@@ -10,7 +10,7 @@ const Career = () => {
                 <h1 style={{fontFamily: "Inter"}}>careers at meetcute</h1>
             </div>
             <div className="careerContainer2">
-                <h2 style={{fontFamily: "Inter"}}>nothing at the moment</h2>
+                <h2 style={{fontFamily: "Inter", color: "lightgray"}}>we have nothing at the moment. check back later for updates!</h2>
             </div>
         </>
     ) 

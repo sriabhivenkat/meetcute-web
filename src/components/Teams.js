@@ -37,14 +37,14 @@ const Teams = () => {
                             designs ui/ux components
                         </h3>
                     </div>
-                    <div className="nameComp">
+                    {/* <div className="nameComp">
                         <h2 className="gradientText">
                             kirthivel ramesh
                         </h2>
                         <h3 style={{fontFamily: "Inter", fontWeight: "300",  fontSize: 20, textAlign: "center"}}>
                             plans distribution strategies
                         </h3>
-                    </div>
+                    </div> */}
                     <div className="nameComp">
                         <h2 className="gradientText">
                             arkaprabho bose

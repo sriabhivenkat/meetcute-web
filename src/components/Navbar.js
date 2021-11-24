@@ -20,7 +20,7 @@ const NavbarComp = () => {
                 >
                     Meetcute.
                 </Link>
-                <Link 
+                {/* <Link 
                     to="/newsroom"
                     style={{
                         fontFamily: "Inter",
@@ -31,7 +31,7 @@ const NavbarComp = () => {
                     }}
                 >
                     newsroom
-                </Link>
+                </Link> */}
                 <Link
                     to="/team"
                     style={{
@@ -39,7 +39,6 @@ const NavbarComp = () => {
                         fontWeight: "600",
                         color: "white",
                         fontSize: 20,
-                        marginLeft: 100,
                         marginRight: 100,
                         textDecoration: "none"
                     }}
@@ -71,7 +70,7 @@ const NavbarComp = () => {
                 >
                     partnerships
                 </Link>
-                <Link
+                {/* <Link
                     to="/market"
                     style={{
                         fontFamily: "Inter",
@@ -83,7 +82,7 @@ const NavbarComp = () => {
                     }}
                 >
                     market
-                </Link>
+                </Link> */}
             </div>
             :
             <div className="navbarSmallScreen">
@@ -93,12 +92,12 @@ const NavbarComp = () => {
                 >
                     Meetcute.
                 </Link>
-                <Link 
+                {/* <Link 
                     to="/newsroom"
                     className="link"
                 >
                     newsroom
-                </Link>
+                </Link> */}
                 <Link
                     to="/team"
                     className="link"

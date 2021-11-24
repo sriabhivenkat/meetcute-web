@@ -12,14 +12,15 @@ import Marketplace from './components/pages/Marketplace';
 import Login from './components/pages/Login';
 import DashboardHome from './components/pages/DashboardHome';
 
-function App() {
+function App({history}) {
   const [session, setSession] = useState(null)
 
   useEffect(() => {
     setSession(supabase.auth.session())
-
+    console.log(session)
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session)
+      console.log(session) 
     })
   }, [])
   return(
@@ -32,8 +33,9 @@ function App() {
           <Route path='/team' exact component={Team} />
           <Route path='/advertising' exact component={Partnerships} />
           <Route path='/careers' exact component={Careers} />
-          <Route path='/market' exact component={Marketplace} />
-          {!session ? <Login /> : <DashboardHome />}
+          <Route path='/legal' exact component={Marketplace} />
+          {/* <Route path='/login' exact component={Login} />
+          <Route path="/dashboardhome" exact component={DashboardHome} /> */}
         </div>
       </Router>
     </>
