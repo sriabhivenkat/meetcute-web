@@ -164,7 +164,7 @@ const Market = () => {
                 </h3>
                     You have control over the information that you share with MeetQT subject to certain limitations.
 
-                    MeetQT’s Services have been built in a way to minimize the amount of information that is stored within them. Nonetheless, if you want to review, update, change or delete the information that you have shared with MeetQT, including deletion of your account, you may send a request to do so to operations@MeetQT-tech.com.
+                    MeetQT’s Services have been built in a way to minimize the amount of information that is stored within them. Nonetheless, if you want to review, update, change or delete the information that you have shared with MeetQT, including deletion of your account, you may send a request to do so to sriabhi01@meetqt.com.
 
                     Even in the event that MeetQT deletes your information, MeetQT still may retain previous messages you sent and the profile associated with those messages. MeetQT may also retain certain information for legitimate business purposes such as maintenance of security of the Services or to comply with applicable laws or regulations, depending on the circumstances of such deletion. You understand and agree that MeetQT may have responsibility to law enforcement or other governmental entities or to its stakeholders, to maintain information if there is the possibility of any unsafe or illegal behavior to ensure the Services are not exploited in the future.
                     <br/>
@@ -189,10 +189,6 @@ const Market = () => {
                     All of MeetQT’s rights and obligations pursuant to this Privacy Policy are freely assignable by MeetQT to any of our affiliates, in connection with a merger, acquisition, restructuring, or sale of assets, or by operation of law or otherwise, and we may transfer your information to any of our affiliates, successor entities, or new owner.
                     <br/>
                     <br/>
-                    10. Contact Us
-                    <br/>
-                    For any questions or concerns that you may have regarding this Privacy Policy, please contact us at operations@MeetQT-tech.com.
-
                 
                 </p>
             </div>
@@ -296,7 +292,7 @@ const Market = () => {
 
                 MeetQT grants you a limited, revocable, non-exclusive, non-sublicensable, and non-transferable license to use our Services as long as you are in compliance with these Terms. This license is limited only to enabling you to use our Services according to these Terms, and you are granted no other license by MeetQT.
 
-                MeetQT reserves the right to address claims of intellectual property infringement by you or a third-party when using our Services by such reasonable means to protect the rights of the intellectual property owner. If you would like to report intellectual property infringement please contact us at operations@MeetQT-tech.com.
+                MeetQT reserves the right to address claims of intellectual property infringement by you or a third-party when using our Services by such reasonable means to protect the rights of the intellectual property owner. If you would like to report intellectual property infringement please contact us at sriabhi01@meetqt.com.
 
                 <br/>
                 <br/>
