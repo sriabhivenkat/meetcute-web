@@ -8,7 +8,7 @@ std::ostream & _assert_pairs_in_correct_buckets(
     const shadow_map<K, V> & shadow_map,
     UnorderedMap<K, V> & map
 ) {
-    using local_iter = typename UnorderedMap<double, double>::local_iterator;
+    using local_iter = typename UnorderedMap<K, V>::local_iterator;
 
     size_t bucket_count = map.bucket_count();
     size_t expected_bucket_count = shadow_map.bucket_count();

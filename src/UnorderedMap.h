@@ -162,6 +162,22 @@ public:
         /* TODO */
     }
 
+    UnorderedMap(const UnorderedMap & other) {
+        /* TODO */
+    }
+
+    UnorderedMap(UnorderedMap && other) {
+        /* TODO */
+    }
+
+    UnorderedMap & operator=(const UnorderedMap & other) {
+        /* TODO */
+    }
+
+    UnorderedMap & operator=(UnorderedMap && other) {
+        /* TODO */
+    }
+
     void clear() noexcept {
         /* TODO */
     }
