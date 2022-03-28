@@ -2,12 +2,12 @@
 #include "primes.h"
 
 template<typename Map>
-typename Map::size_type correct_hash(typename Map::key_type key) {
+typename Map::size_type correct_hash(typename Map::key_type const & key) {
     return (typename Map::hasher {})(key);
 }
 
 template<typename Map>
-typename Map::size_type correct_bucket(typename Map::key_type key, typename Map::size_type bucket_count) {
+typename Map::size_type correct_bucket(typename Map::key_type const & key, typename Map::size_type bucket_count) {
     typename Map::hasher hash {};
     return hash(key) % bucket_count;
 }
