@@ -3,7 +3,6 @@
 TEST(access_operator) {
     Typegen t;
     for(size_t i = 0; i < TEST_ITER; i++) {
-        using iter = typename UnorderedMap<double, double>::iterator;
         
         size_t n_pairs = t.range(1000ul);
         std::vector<std::pair<double, double>> pairs(n_pairs);
