@@ -15,9 +15,9 @@ class UnorderedMap {
     using key_equal = Pred;
     using value_type = std::pair<const key_type, mapped_type>;
     using reference = value_type &;
-    using const_reference = const reference;
+    using const_reference = const value_type &;
     using pointer = value_type *;
-    using const_pointer = const pointer;
+    using const_pointer = const value_type *;
     using size_type = size_t;
     using difference_type = ptrdiff_t;
 
@@ -153,7 +153,7 @@ private:
     }
 
 public:
-    UnorderedMap(size_type bucket_count, const Hash & hash = Hash { },
+    explicit UnorderedMap(size_type bucket_count, const Hash & hash = Hash { },
                 const key_equal & equal = key_equal { }) {
         /* TODO */
     }
