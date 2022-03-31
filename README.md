@@ -1,10 +1,8 @@
 # Unordered Map
 
-Have you ever wanted to associate two things together? For instance, you have an array of the names of your friends and an array of their birthdays in order to remember which birthday belongs to which friend. These two arrays are associated because the friend is tied to their own birthday. In practice, we use a Hash Map to accomplish this because we can Hash the key to get an index very quickly and this allows us to use all manner of objects for a key. [`std::unordered_map`](https://en.cppreference.com/w/cpp/container/unordered_map), which you are parodying with [`UnorderedMap`](src/UnorderedMap.h) does this hashing.
+Have you ever wanted to associate two things together? For instance, you have an array of the names of your friends and an array of their birthdays in order to remember which birthday belongs to which friend. These two arrays are associated because each friend has one corresponding birthday. While many data structures including trees can be used to associate keys and values, hash tables are a popular choice since they supports efficent `O(1)` insertion, deletion, and search. It does this by transforming each key into a unique index through the use of a hash function. This index can be used to find the object in an array. Ideally, each index would correspond to a single key-value pair. This is called perfect hashing. In practice, it is very difficult to find a hash function which accomplishes perfect hashing. Most hashing datastructures permit collisions and resolve them through various methods. 
 
-Unordered map is an associative container that contains key-value pairs with unique keys. Search, insertion, and removal of elements have average constant-time complexity.
-
-Internally, the elements are not sorted in any particular order, but organized into buckets. Which bucket an element is placed into depends entirely on the hash of its key. Keys with the same hash code appear in the same bucket. This allows fast access to individual elements, since once the hash is computed, it refers to the exact bucket the element is placed into. 
+In this assignment, you will be parodying [`std::unordered_map`](https://en.cppreference.com/w/cpp/container/unordered_map) with [`UnorderedMap`](src/UnorderedMap.h). Unordered map is an associative container that stores key-value pairs and can search them by unique keys. Search, insertion, and removal of elements have average constant-time complexity. Internally, the elements are not sorted in any particular order, but organized into buckets. Which bucket an element is placed into depends entirely on the hash of its key. Keys with the same hash code appear in the same bucket. This allows fast access to individual elements, since once the hash is computed, it refers to the exact bucket the element is placed into. Each bucket has an assoicated list where all colliding key-value pairs are stored. This allows the map to achieve high load factors without a drastic reduction in performance. (This effect is commonly associated with closed-addressing.) `std::unordered_map` resizes automatically when the load factor exceeded a user-designated maximum load factor. It accomplishes this by increasing the number of buckets and rehashing the keys. To simplify the assignment, your map will have a fixed size.
 
 ## Getting started
 
@@ -112,7 +110,7 @@ You are to implement the below `UnorderedMap` functions.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** constructor
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/unordered_map
 
@@ -124,7 +122,7 @@ You are to implement the below `UnorderedMap` functions.
 
 **Time Complexity:** Linear in the size of the `UnorderedMap`.
 
-**Test Names:** 
+**Test Names:** *used frequently*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/~unordered_map
 
@@ -136,7 +134,7 @@ You are to implement the below `UnorderedMap` functions.
 
 **Time Complexity:** Linear in size of `other`.
 
-**Test Names:** 
+**Test Names:** constructor_copy
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/unordered_map
 
@@ -148,7 +146,7 @@ You are to implement the below `UnorderedMap` functions.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** constructor_move
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/unordered_map
 
@@ -160,7 +158,7 @@ You are to implement the below `UnorderedMap` functions.
 
 **Time Complexity:** Linear in the size of `*this` and `other`.
 
-**Test Names:** 
+**Test Names:** operator_copy
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/operator=
 
@@ -172,7 +170,7 @@ You are to implement the below `UnorderedMap` functions.
 
 **Time Complexity:** Linear in the size of `*this`.
 
-**Test Names:** 
+**Test Names:** operator_move
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/operator=
 
@@ -186,7 +184,7 @@ Invalidates any references, pointers, or iterators referring to contained elemen
 
 **Time Complexity:** Linear in the size of the container, i.e., the number of elements.
 
-**Test Names:** 
+**Test Names:** clear_and_empty
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/clear
 
@@ -198,7 +196,7 @@ Invalidates any references, pointers, or iterators referring to contained elemen
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *used frequently*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/size
 
@@ -210,7 +208,7 @@ Invalidates any references, pointers, or iterators referring to contained elemen
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** clear_and_empty
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/empty
 
@@ -222,7 +220,7 @@ Invalidates any references, pointers, or iterators referring to contained elemen
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *used frequently*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/bucket_count
 
@@ -236,7 +234,7 @@ If the `UnorderedMap` is empty, the returned iterator will be equal to [`end()`]
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *iterator*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/begin
 
@@ -250,7 +248,7 @@ This element acts as a placeholder; attempting to access it results in undefined
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *iterator*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/end
 
@@ -258,11 +256,11 @@ This element acts as a placeholder; attempting to access it results in undefined
 
 `local_iterator begin(size_type n);`
 
-**Description:** Returns an iterator to the first element of the bucket with index `n`.
+**Description:** Returns a local iterator to the first element of the bucket with index `n`.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *local_iterator*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/begin2
 
@@ -270,11 +268,11 @@ This element acts as a placeholder; attempting to access it results in undefined
 
 `local_iterator end(size_type n);`
 
-**Description:** Returns an iterator to the element following the last element of the bucket with index `n`. This element acts as a placeholder, attempting to access it results in undefined behavior.
+**Description:** Returns a local iterator to the element following the last element of the bucket with index `n`. This element acts as a placeholder, attempting to access it results in undefined behavior.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *local_iterator*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/end2
 
@@ -286,7 +284,7 @@ This element acts as a placeholder; attempting to access it results in undefined
 
 **Time Complexity:** Linear in the size of the bucket `n`.
 
-**Test Names:** 
+**Test Names:** *bucket_size*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/bucket_size
 
@@ -298,7 +296,7 @@ This element acts as a placeholder; attempting to access it results in undefined
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *load_factor*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/load_factor
 
@@ -312,7 +310,7 @@ The behavior is undefined if [`bucket_count()`](https://en.cppreference.com/w/cp
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *bucket*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/bucket
 
@@ -324,7 +322,7 @@ The behavior is undefined if [`bucket_count()`](https://en.cppreference.com/w/cp
 
 **Time Complexity:** Average case: O(1), worst case O(`size()`)
 
-**Test Names:** 
+**Test Names:** *insert_and_move*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/insert
 
@@ -336,7 +334,7 @@ The behavior is undefined if [`bucket_count()`](https://en.cppreference.com/w/cp
 
 **Time Complexity:** Average case: O(1), worst case O(`size()`)
 
-**Test Names:** 
+**Test Names:** *insert_and_local_iterator*, *insert_and_global_iterator*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/insert
 
@@ -360,7 +358,7 @@ The behavior is undefined if [`bucket_count()`](https://en.cppreference.com/w/cp
 
 **Time Complexity:** Average case: constant, worst case: linear in size.
 
-**Test Names:** 
+**Test Names:** *access_operator*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/operator_at
 
@@ -384,7 +382,7 @@ The behavior is undefined if [`bucket_count()`](https://en.cppreference.com/w/cp
 
 **Time Complexity:** Average case: [`c.count(key)`](https://en.cppreference.com/w/cpp/container/unordered_map/count), worst case: `c.size()`
 
-**Test Names:** 
+**Test Names:** *erase_iterator*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/erase
 
@@ -415,8 +413,6 @@ This is an iterator to all of the nodes within the `UnorderedMap`. It should jum
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
-
 ----
 
 `iterator();`
@@ -425,7 +421,7 @@ This is an iterator to all of the nodes within the `UnorderedMap`. It should jum
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *iterator*
 
 ----
 
@@ -435,7 +431,7 @@ This is an iterator to all of the nodes within the `UnorderedMap`. It should jum
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *iterator*
 
 ----
 
@@ -445,7 +441,7 @@ This is an iterator to all of the nodes within the `UnorderedMap`. It should jum
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *iterator*
 
 ----
 
@@ -455,7 +451,7 @@ This is an iterator to all of the nodes within the `UnorderedMap`. It should jum
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *iterator*
 
 ----
 
@@ -465,7 +461,7 @@ This is an iterator to all of the nodes within the `UnorderedMap`. It should jum
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *iterator*, *insert_and_global_iterator*
 
 ----
 
@@ -475,7 +471,7 @@ This is an iterator to all of the nodes within the `UnorderedMap`. It should jum
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *iterator*
 
 ----
 
@@ -485,7 +481,7 @@ This is an iterator to all of the nodes within the `UnorderedMap`. It should jum
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *insert_and_global_iterator*, *iterator*
 
 ----
 
@@ -501,8 +497,6 @@ This is an iterator to the nodes within a single bucket of the `UnorderedMap`.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
-
 ----
 
 `local_iterator();`
@@ -511,7 +505,7 @@ This is an iterator to the nodes within a single bucket of the `UnorderedMap`.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *local_iterator*
 
 ----
 
@@ -521,7 +515,7 @@ This is an iterator to the nodes within a single bucket of the `UnorderedMap`.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *local_iterator*
 
 ----
 
@@ -531,7 +525,7 @@ This is an iterator to the nodes within a single bucket of the `UnorderedMap`.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *local_iterator*, *insert_and_local_iterator*
 
 ----
 
@@ -541,7 +535,7 @@ This is an iterator to the nodes within a single bucket of the `UnorderedMap`.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *local_iterator*
 
 ----
 
@@ -551,7 +545,7 @@ This is an iterator to the nodes within a single bucket of the `UnorderedMap`.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *local_iterator*, *insert_and_local_iterator*
 
 ----
 
@@ -561,7 +555,7 @@ This is an iterator to the nodes within a single bucket of the `UnorderedMap`.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *local_iterator*
 
 ----
 
@@ -571,7 +565,7 @@ This is an iterator to the nodes within a single bucket of the `UnorderedMap`.
 
 **Time Complexity:** Constant.
 
-**Test Names:** 
+**Test Names:** *local_iterator*, *insert_and_local_iterator*
 
 ----
 
@@ -625,10 +619,34 @@ The first command builds the tests, the next enters the folder where the tests w
 
 ## Incremental Testing:
 
-
+To ensure the correctness of an insert, the bucket iterator has to be fully implemented so the test cases can compare the insertion location against the correct location. Completing `insert`, `bucket_iterator`, and the required helpers is fairly involved. We suggest the following order:
+ 
+1. `constructor`: complete `bucket_count`, `constructor`, and `size`.
+2. `insert_and_global_iterator`: complete `begin`, `end`, `insert`, `iterator::operator++(int)`, `iterator::operator->()`, and `iterator::operator!=`. (You may wish to complete the `_insert_before`, `_bucket`, and `_find_prev` helpers for `insert`.)
+3. `insert_and_local_iterator`: complete `bucket_size`, `begin(bucket)`, `end(bucket)`, `local_iterator::operator++(int)`, `local_iterator::operator!=`, and `local_iterator::operator->()`.
+ 
+After passing these tests, you should be able to selectively complete the remaining methods.
 
 ## Main.cpp:
 
+`main.cpp` is a test bench which compares four hash functions and their effect on the spatial distribution of values over the buckets. You can test the performance of your map on the following string hash functions:
+
+1. Zero Hash: A hash function which always maps to zero.
+2. First Character Hash: A hash function which returns the first element in the string.
+3. Polynomial Rolling Hash: A variant of the polynomial hash which appears in the lecture notes. (Roughly based on a linear congruential generator.)
+4. STD Hash: The standard library hash. GCC using a variant of FVN-1A.
+
+This function will be applied to unique keys consisting of randomly generated animals:
+
+```
+Colorful Little Penguin
+Luxurious Tiffany
+Naturalistic Jackal
+Embarrassed Squirrel Monkey
+Invincible Epagneul Pont Audemer
+```
+
+The program will calculate the load-factor, load-variant, and plot the proportion of data in each bucket. A well-designed hash function should distribute the sample data uniformly over the buckets.
 
 ## Turn In
 
