@@ -1,8 +1,8 @@
 # Unordered Map
 
-Have you ever wanted to associate two things together? For instance, you have an array of the names of your friends and an array of their birthdays in order to remember which birthday belongs to which friend. These two arrays are associated because each friend has one corresponding birthday. While many data structures including trees can be used to associate keys and values, hash tables are a popular choice since they supports efficent `O(1)` insertion, deletion, and search. It does this by transforming each key into a unique index through the use of a hash function. This index can be used to find the object in an array. Ideally, each index would correspond to a single key-value pair. This is called perfect hashing. In practice, it is very difficult to find a hash function which accomplishes perfect hashing. Most hashing datastructures permit collisions and resolve them through various methods. 
+Have you ever wanted to associate two things together? For instance, you have an array of the names of your friends and an array of their birthdays in order to remember which birthday belongs to which friend. These two arrays are associated because each friend has one corresponding birthday. While many data structures including trees can be used to associate keys and values, hash tables are a popular choice since they support efficent `O(1)` insertion, deletion, and search. They accomplish this by transforming each key into a unique index through the use of a hash function. This index can be used to find the object in an array. Ideally, each index would correspond to a single key-value pair. This is called perfect hashing. In practice, it is very difficult to find a hash function which accomplishes perfect hashing. Most hashing datastructures permit collisions and resolve them through various methods. 
 
-In this assignment, you will be parodying [`std::unordered_map`](https://en.cppreference.com/w/cpp/container/unordered_map) with [`UnorderedMap`](src/UnorderedMap.h). Unordered map is an associative container that stores key-value pairs and can search them by unique keys. Search, insertion, and removal of elements have average constant-time complexity. Internally, the elements are not sorted in any particular order, but organized into buckets. Which bucket an element is placed into depends entirely on the hash of its key. Keys with the same hash code appear in the same bucket. This allows fast access to individual elements, since once the hash is computed, it refers to the exact bucket the element is placed into. Each bucket has an assoicated list where all colliding key-value pairs are stored. This allows the map to achieve high load factors without a drastic reduction in performance. (This effect is commonly associated with closed-addressing.) `std::unordered_map` resizes automatically when the load factor exceeded a user-designated maximum load factor. It accomplishes this by increasing the number of buckets and rehashing the keys. To simplify the assignment, your map will have a fixed size.
+In this assignment, you will be parodying [`std::unordered_map`](https://en.cppreference.com/w/cpp/container/unordered_map) with [`UnorderedMap`](src/UnorderedMap.h). Unordered map is an associative container that stores key-value pairs and can search them by unique keys. Search, insertion, and removal of elements have average constant-time complexity. Internally, the elements are not sorted in any particular order, but organized into buckets. Which bucket an element is placed into depends entirely on the hash of its key. Keys with the same hash code appear in the same bucket. This allows fast access to individual elements, since once the hash is computed, it refers to the exact bucket the element is placed into. Each bucket has an assoicated list where all colliding key-value pairs are stored. This allows the map to achieve high load factors without a drastic reduction in performance. (This effect is commonly associated with closed-addressing.) `std::unordered_map` resizes automatically when the load factor exceedes a user-designated maximum load factor. It accomplishes this by increasing the number of buckets and rehashing the keys. To simplify the assignment, your map will have a fixed size.
 
 ## Getting started
 
@@ -634,7 +634,7 @@ After passing these tests, you should be able to selectively complete the remain
 1. Zero Hash: A hash function which always maps to zero.
 2. First Character Hash: A hash function which returns the first element in the string.
 3. Polynomial Rolling Hash: A variant of the polynomial hash which appears in the lecture notes. (Roughly based on a linear congruential generator.)
-4. STD Hash: The standard library hash. GCC using a variant of FVN-1A.
+4. STD Hash: The standard library hash. GCC uses a variant of FVN-1A.
 
 This function will be applied to unique keys consisting of randomly generated animals:
 
@@ -646,7 +646,7 @@ Embarrassed Squirrel Monkey
 Invincible Epagneul Pont Audemer
 ```
 
-The program will calculate the load-factor, load-variant, and plot the proportion of data in each bucket. A well-designed hash function should distribute the sample data uniformly over the buckets.
+The program will calculate the load-factor, load-variance, and plot the proportion of data in each bucket. A well-designed hash function should distribute the sample data uniformly over the buckets.
 
 ## Turn In
 
