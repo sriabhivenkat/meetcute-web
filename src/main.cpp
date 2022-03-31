@@ -1,11 +1,16 @@
 #include "UnorderedMap.h"
+
 #include <random>
 #include <limits>
 #include <iostream>
 #include <iomanip>
+#include <algorithm>
+#include <filesystem>
+#include <fstream>
+#include <array>
 
 constexpr size_t MAX_TERMINAL_WIDTH = 80;
-constexpr size_t N_ELEMENTS = 1e3;
+constexpr size_t N_ELEMENTS = 1e4;
 
 static void print_sep() {
     std::cout << std::endl;
@@ -14,18 +19,191 @@ static void print_sep() {
     std::cout << std::endl << std::endl;
 }
 
-int main() {
-    auto hash = [](const int & num) -> size_t {
-        return num;
+struct zero_hash {
+    size_t operator() (std::string const & str) const {
+        return 0;
+    }
+};
+
+struct first_character_hash  {
+    size_t operator() (std::string const & str) const {
+        if(str.length() == 0)
+            return 0ull;
+
+        return str[0];
+    }
+};
+
+struct polynomial_rolling_hash {
+    size_t operator() (std::string const & str) const {
+        const int b = 19;
+        const size_t m = 3298534883309ul;
+        
+        size_t hash = 0;
+        size_t pow = 1;
+
+        for(size_t i = 0; i < str.length(); i++) {
+            hash += str[i] * pow;
+            pow =  (pow * b) % m;
+        }
+
+        return hash;
+    }
+};
+
+enum class HashType {
+    ZERO,
+    FIRST_CHARACTER,
+    POLYNOMIAL_ROLLING,
+    STD
+};
+
+struct hash_selector {
+    zero_hash _zero_hash;
+    first_character_hash _first_char_hash;
+    polynomial_rolling_hash _poly_rolling_hash;
+    std::hash<std::string> _std_hash;
+    HashType _htype;
+
+    public:
+
+    hash_selector(HashType htype) 
+        : _htype(htype)
+    {}
+
+    size_t operator() (std::string const & str) const {
+        switch(_htype) {
+            case HashType::ZERO:
+                return _zero_hash(str);
+            case HashType::FIRST_CHARACTER:
+                return _first_char_hash(str);
+            case HashType::POLYNOMIAL_ROLLING:
+                return _poly_rolling_hash(str);
+            case HashType::STD:
+                return _std_hash(str);
+        }
+
+        return 0;
+    }
+};
+
+HashType prompt_hash_type() {
+    using std::cin, std::cout, std::endl, std::ios;
+
+    cout << "Which hash would you like to use:" << endl;
+
+    struct HashChoice {
+        std::string label;
+        HashType type; 
     };
 
-    UnorderedMap<int, int, decltype(hash)> map(30, hash);
+    std::array<HashChoice const, 4> choices = {
+        HashChoice {
+            .label = "Zero Hash",
+            .type = HashType::ZERO,
+        },
+        HashChoice {
+            .label = "First Character Hash",
+            .type = HashType::FIRST_CHARACTER,
+        },
+        HashChoice {
+            .label = "Polynomial Rolling Hash",
+            .type = HashType::POLYNOMIAL_ROLLING,
+        },
+        HashChoice {
+            .label = "STD Hash (Variant of FVN-1A)",
+            .type = HashType::STD,
+        }
+    };
+
+    for(size_t i = 0; i < choices.size(); i++)
+        cout << "(" << i << "). " << choices[i].label << endl;
+    
+
+    cout << endl;
+
+    size_t choice;
+
+    do {
+        cout << "Enter your selection: ";
+        if(!(cin >> choice)) {
+            cin.clear(cin.rdstate() & ~ios::failbit);
+
+            continue;
+        }
+
+        if(choice >= choices.size())
+            continue;
+        
+        break;
+    } while(true);
+
+    return choices[choice].type;
+}
+
+namespace fs = std::filesystem;
+
+class AnimalDistribution {
+    std::vector<std::string> animals;
+    std::vector<std::string> adjectives;
+
+    public:
+    
+    AnimalDistribution(fs::path const adjectives_path, fs::path const animals_path) {
+        std::ifstream adjectives_file(adjectives_path);
+        std::ifstream animals_file(animals_path);
+
+        std::string line;
+
+        while(std::getline(adjectives_file, line))
+            adjectives.push_back(line);
+        
+        while(std::getline(animals_file, line))
+            animals.push_back(line);
+    }
+
+    template<class Generator>
+    std::string operator()(Generator & g) const {
+        std::string animal, adjective;
+
+        std::sample(adjectives.cbegin(), adjectives.cend(), &adjective, 1, g);
+        std::sample(animals.cbegin(), animals.cend(), &animal, 1, g);
+
+        adjective[0] = std::toupper(adjective[0]);
+        
+        return adjective + " " + animal;
+    }
+
+};
+
+constexpr size_t N_SAMPLE_HASHES = 5;
+
+int main() {
+    fs::path data_files = fs::path("..") / "data_files";
+
+    fs::path animals = data_files / "animals.txt";
+    fs::path adjectives = data_files / "adjectives.txt";
+
+    HashType htype = prompt_hash_type();
 
     std::random_device rd;
     std::mt19937 generator(rd());
 
+    hash_selector hash (htype);
+
+    AnimalDistribution distribution(adjectives, animals);
+
+    std::cout << std::endl;
+    std::cout << "Example hashes:" << std::endl;
+    for(size_t i = 0; i < N_SAMPLE_HASHES; i++) {
+        std::string animal = distribution(generator);
+        std::cout << animal << ": " << hash(animal) << std::endl;
+    }
+
+    UnorderedMap<std::string, int, hash_selector> map(30, hash);
+
     for(size_t i = 0; i < N_ELEMENTS; i++) {
-        map.insert({generator(), 0});
+        map.insert({distribution(generator), 0});
     }
 
     std::vector<size_t> bucket_sizes(map.bucket_count());
@@ -67,4 +245,6 @@ int main() {
     std::cout << "  Buckets: " << map.bucket_count() << std::endl;
     std::cout << "  Load factor: " << map.load_factor() << std::endl;
     std::cout << "  Load variance: " << load_variance << std::endl;
+
+    return 0;
 }
