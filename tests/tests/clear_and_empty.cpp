@@ -29,7 +29,7 @@ TEST(clear_and_empty) {
             ASSERT_EQ(shad_map.size(), mh.n_allocs());
         }
         
-        if(map.size()) ASSERT_FALSE(map.empty());
+        if(shad_map.size()) ASSERT_FALSE(map.empty());
 
         {
             Memhook mh;
