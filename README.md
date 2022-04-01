@@ -652,3 +652,5 @@ The program will calculate the load-factor, load-variance, and plot the proporti
 
 Submit the following file **and no other files** to Gradescope:
 - [ ] [`UnorderedMap.h`](src/UnorderedMap.h)
+- [ ] [`primes.h`](src/primes.h)
+- [ ] [`primes.cpp`](src/primes.cpp)
