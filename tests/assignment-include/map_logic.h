@@ -1,6 +1,9 @@
 #pragma once
 #include "primes.h"
 
+#include <vector>
+#include <unordered_map>
+
 template<typename Map>
 typename Map::size_type correct_hash(typename Map::key_type const & key) {
     return (typename Map::hasher {})(key);

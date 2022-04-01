@@ -13,7 +13,7 @@ TEST(access_operator) {
         shadow_map<double, double> shadow_map(n);
     
         for(auto const & pair : pairs) {
-            auto [it, inserted] = shadow_map.insert(pair);
+            shadow_map.insert(pair);
             
             {
                 Memhook mh;

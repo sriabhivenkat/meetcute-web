@@ -7,6 +7,25 @@ TEST(iterator) {
     using iter = typename UnorderedMap<int, int>::iterator;
     using value_type = std::pair<int, int>;
 
+    // Check if memory is uninitalized
+    {
+        size_t constexpr max_node_sz = 1024;
+        char VALID_MEM[max_node_sz];
+        memset(VALID_MEM, 0xEE, sizeof(VALID_MEM));
+
+        char ITER_MEM[sizeof(iter)];
+        for(char ** cur = (char **) ITER_MEM; 
+            (cur + 1) <= (char **) (ITER_MEM + sizeof(iter)); cur++)
+            *cur = VALID_MEM;
+
+        iter * it = new (ITER_MEM) iter;
+
+        char * p = reinterpret_cast<char *>(&(**it));
+        ASSERT_FALSE(VALID_MEM <= p && p <= VALID_MEM + sizeof(VALID_MEM));
+
+        it->~iter();
+    }
+
     // check iterator functions
     for(size_t i = 0; i < TEST_ITER; i++) {
         const size_t sz = t.range(100UL);
@@ -48,7 +67,7 @@ TEST(iterator) {
                 ASSERT_TRUE(*it_a == *it_b);
                 it_a++;
                 it_b++;
-                count ++;
+                count++;
             }
             ASSERT_EQ(map.size(), count);
 

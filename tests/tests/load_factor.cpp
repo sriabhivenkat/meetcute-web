@@ -17,8 +17,10 @@ TEST(load_factor) {
 
         for(size_t k = 0; k < n_pairs; k++) {
             map.insert(pairs[k]);
-            ASSERT_EQ(static_cast<float>(k + 1)/static_cast<float>(n_buckets),
-                      map.load_factor());
+            
+            float expected_load = static_cast<float>(k + 1)/static_cast<float>(n_buckets);
+
+            ASSERT_EQ(expected_load, map.load_factor());
         }
     }
 }

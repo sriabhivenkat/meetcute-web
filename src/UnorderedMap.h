@@ -98,11 +98,11 @@ class UnorderedMap {
             friend class UnorderedMap<Key, T, Hash, key_equal>;
             using HashNode = typename UnorderedMap<Key, T, Hash, key_equal>::HashNode;
 
-            UnorderedMap & _map;
+            UnorderedMap * _map;
             HashNode * _node;
             size_type _bucket;
 
-            explicit local_iterator(UnorderedMap & map, HashNode *ptr, size_type bucket) noexcept { /* TODO */ }
+            explicit local_iterator(UnorderedMap * map, HashNode *ptr, size_type bucket) noexcept { /* TODO */ }
 
         public:
             local_iterator() { /* TODO */ };
