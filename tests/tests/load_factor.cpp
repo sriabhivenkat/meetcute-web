@@ -12,10 +12,10 @@ TEST(load_factor) {
         t.fill(pairs.begin(), pairs.end());
 
         size_t sz = t.range(100ull);
+        Map map(sz);
         size_t n_buckets =  next_greater_prime(sz);
-        Map map(n_buckets);
 
-        for(size_t k=0; k<n_pairs; k++) {
+        for(size_t k = 0; k < n_pairs; k++) {
             map.insert(pairs[k]);
             ASSERT_EQ(static_cast<float>(k + 1)/static_cast<float>(n_buckets),
                       map.load_factor());

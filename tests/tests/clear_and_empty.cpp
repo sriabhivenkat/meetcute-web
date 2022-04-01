@@ -6,17 +6,17 @@ TEST(clear_and_empty) {
         using value_type = std::pair<double, double>;
         using Map = UnorderedMap<double, double>;
         
-        size_t n_buckets = i == 0 ? 0ULL : t.range<size_t>(1, 256);
+        size_t n = i == 0 ? 0ULL : t.range<size_t>(1, 256);
         size_t n_pairs = t.range(1000ul);
         
         std::vector<value_type> pairs(n_pairs);
         t.fill(pairs.begin(), pairs.end());
 
-        Map map(n_buckets);
-        shadow_map<double, double> shadow_map(n_buckets);
+        Map map(n);
+        shadow_map<double, double> shad_map(n);
 
         for(auto const & pair : pairs) {
-            shadow_map.insert(pair);
+            shad_map.insert(pair);
         }
         
         {
@@ -24,9 +24,9 @@ TEST(clear_and_empty) {
             for(auto const & pair : pairs) {
                 map.insert(pair);
             }
-            ASSERT_PAIRS_FOUND_IN_CORRECT_BUCKETS(shadow_map, map);
-            ASSERT_EQ(shadow_map.size(), map.size());
-            ASSERT_EQ(shadow_map.size(), mh.n_allocs());
+            ASSERT_PAIRS_FOUND_IN_CORRECT_BUCKETS(shad_map, map);
+            ASSERT_EQ(shad_map.size(), map.size());
+            ASSERT_EQ(shad_map.size(), mh.n_allocs());
         }
         
         if(map.size()) ASSERT_FALSE(map.empty());
@@ -34,7 +34,7 @@ TEST(clear_and_empty) {
         {
             Memhook mh;
             map.clear();
-            ASSERT_EQ(shadow_map.size(), mh.n_frees());
+            ASSERT_EQ(shad_map.size(), mh.n_frees());
         }
         ASSERT_EQ(0ULL, map.size());
         ASSERT_TRUE(map.empty());
