@@ -370,7 +370,7 @@ The behavior is undefined if [`bucket_count()`](https://en.cppreference.com/w/cp
 
 **Time Complexity:** Average case: constant, worst case: `c.size()`
 
-**Test Names:** 
+**Test Names:** *erase_iterator*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/erase
 
@@ -382,7 +382,7 @@ The behavior is undefined if [`bucket_count()`](https://en.cppreference.com/w/cp
 
 **Time Complexity:** Average case: [`c.count(key)`](https://en.cppreference.com/w/cpp/container/unordered_map/count), worst case: `c.size()`
 
-**Test Names:** *erase_iterator*
+**Test Names:** *erase*
 
 **Link:** https://en.cppreference.com/w/cpp/container/unordered_map/erase
 
