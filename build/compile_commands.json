@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/Users/sriabhivenkat/Desktop/221_PAs/assignment-unordered-map/build",
+  "command": "/usr/bin/clang++    -Wall -pedantic -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++17 -o CMakeFiles/UnorderedMap.dir/src/main.cpp.o -c /Users/sriabhivenkat/Desktop/221_PAs/assignment-unordered-map/src/main.cpp",
+  "file": "/Users/sriabhivenkat/Desktop/221_PAs/assignment-unordered-map/src/main.cpp"
+},
+{
+  "directory": "/Users/sriabhivenkat/Desktop/221_PAs/assignment-unordered-map/build",
+  "command": "/usr/bin/clang++    -Wall -pedantic -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++17 -o CMakeFiles/UnorderedMap.dir/src/primes.cpp.o -c /Users/sriabhivenkat/Desktop/221_PAs/assignment-unordered-map/src/primes.cpp",
+  "file": "/Users/sriabhivenkat/Desktop/221_PAs/assignment-unordered-map/src/primes.cpp"
+}
+]
