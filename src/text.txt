@@ -1,0 +1,9 @@
+size_type _bucket(const Key &key) const;
+Returns the index of the bucket for key key. Elements (if any) with keys equivalent to key are always found in this bucket.
+
+size_type bucket_size(size_type n);
+Returns the number of elements in the bucket with index n.
+
+in order to get bucket_size for a given index, we 
+
+a pair has a key_type -> something we can put into _bucket.
