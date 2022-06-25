@@ -129,11 +129,20 @@ const LandingPage = () => {
             }
             <div className="heroContainer1">
                     {/* <div className="textContainer"> */}
+                    <span class="back">
+                    <span>p</span>
+                    <span>i</span>
+                    <span>x</span>
+                    <span>l</span>
+                    <span>i</span>
+                    <span>s</span>
+                    <span>t</span>
+                    </span>
                         <h1 style={{fontFamily: "Inter", color: "white", fontWeight: "500"}}>
-                            come make memories with meetcute.
+                            come enjoy life with pixlist!
                         </h1>
                         <h5 style={{marginLeft: 5, fontWeight: "200", fontFamily: "Inter", color: "white", marginTop: 20}}>
-                            we've got a little something for everyone.
+                            take a pic, tag a friend, hit send.
                         </h5>
                         {/* <Button variant="outline-light" size="small" href="/legal" style={{fontFamily: "Inter", marginTop: 10,}}>
                             privacy policy

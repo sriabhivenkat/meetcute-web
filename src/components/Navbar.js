@@ -18,7 +18,7 @@ const NavbarComp = () => {
                         marginRight: 100
                     }}
                 >
-                    Meetcute.
+                    pixlist
                 </Link>
                 {/* <Link 
                     to="/newsroom"

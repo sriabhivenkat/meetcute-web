@@ -1,5 +1,5 @@
 .investorContainer1 {
-    height: 50vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
 .investorContainer1 > h1 {
     font-family: "Inter";
     font-size: 72px;
-    background: -webkit-linear-gradient(right, #4a58ed, #d0a3e3);
+    background: -webkit-linear-gradient(right, #1278d2, #83CEF2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -32,6 +32,13 @@
     align-items: center;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.paragraph > h3{
+    font-family: "Inter";
+    font-size: 20px;
+    background: "black";
+    font-weight: 550;
 }
 .investorContainer3 {
     height: 100vh;

@@ -8,13 +8,13 @@ const Teams = () => {
     return(
         <div className="teamsMega">
             <div className="teamContainer1">
-                <h1>meetcute is a group project.</h1>
+                <h1>pixlist is a group project</h1>
                 <div className="explanation">
                     <h3>
-                        that means no one has a role.
+                        we work together to make things happen
                     </h3>
                     <h3>
-                        everyone pitches in a little and we roll from there.
+                        everyone pitches in a little and we roll from there
                     </h3>
                 </div>
             </div>
@@ -34,25 +34,25 @@ const Teams = () => {
                             trisha narwekar
                         </h2>
                         <h3 style={{fontFamily: "Inter", fontWeight: "300", fontSize: 20, textAlign: "center"}}>
-                            designs ui/ux components
+                            designs & codes ui/ux components
                         </h3>
                     </div>
-                    {/* <div className="nameComp">
+                    <div className="nameComp">
                         <h2 className="gradientText">
                             kirthivel ramesh
                         </h2>
                         <h3 style={{fontFamily: "Inter", fontWeight: "300",  fontSize: 20, textAlign: "center"}}>
                             plans distribution strategies
                         </h3>
-                    </div> */}
-                    <div className="nameComp">
+                    </div>
+                    {/* <div className="nameComp">
                         <h2 className="gradientText">
                             arkaprabho bose
                         </h2>
                         <h3 style={{fontFamily: "Inter", fontWeight: "300",  fontSize: 20, textAlign: "center"}}>
                             works with backend and databases
                         </h3>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="teamContainer3">

@@ -7,9 +7,7 @@ const Career = () => {
     return(
         <>
             <div className="careerContainer1">
-                <h1 style={{fontFamily: "Inter"}}>careers at meetcute</h1>
-            </div>
-            <div className="careerContainer2">
+                <h1 style={{fontFamily: "Inter"}}>careers at pixlist</h1>
                 <h2 style={{fontFamily: "Inter", color: "lightgray"}}>we have nothing at the moment. check back later for updates!</h2>
             </div>
         </>

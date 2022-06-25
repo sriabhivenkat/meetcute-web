@@ -6,12 +6,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f5f5f5;
+    background-color: white;
 }
 .teamContainer1 > h1 {
     font-family: "Inter";
     font-size: 72px;
-    background: -webkit-linear-gradient(right, #4a58ed, #d0a3e3);
+    background: -webkit-linear-gradient(right, #1278d2, #83CEF2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -19,7 +19,7 @@
 .nameComp > h2 {
     font-family: "Inter";
     font-size: 25px;
-    background: -webkit-linear-gradient(bottom right, #4a58ed, #d0a3e3);
+    background: -webkit-linear-gradient(bottom right, #1278d2, #83CEF2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -30,7 +30,13 @@
     flex-direction: column;
     align-items: center;
     margin-top: 40px;
-    background-color: #f5f5f5;
+    background-color: white;
+}
+
+.explanation > h3{
+    font-family: "Inter";
+    font-size: 25px;
+    color: black;
 }
 
 .teamContainer2 {
@@ -39,7 +45,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f5f5f5;
+    background-color: white;
 }
 .rowComp {
     height: 20vh;
@@ -67,7 +73,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-color: #f5f5f5;
+    background-color: white;
 }
 .teamsMega {
     overflow-x: hidden;
