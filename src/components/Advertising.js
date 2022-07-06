@@ -35,14 +35,14 @@ const Advertising = () => {
                             <h4 style={{color: "white", marginTop: 20, fontWeight: "300"}}>by becoming an official vendor for Meetcute Festivals, you have the opportunity to sell anything you'd like, with meetcute taking a 15% cut of total profits.</h4>
                         </div>
                     </div>
-                    <div className="cardContainers">
+                    {/* <div className="cardContainers">
                         <div className="cards1">
                             <h4 style={{color: "white", marginTop: 20, fontWeight: "300"}}>sell gifts of all kind for people to buy on Meetcute Plaza.</h4>
                             <h4 style={{color: "white", fontWeight: "300"}}>sell gifts for people of all sorts of personalities for romantic holidays or anniversaries.</h4>
                         </div>
                         <h1 style={{color: "white", fontSize: 45}}>sell gifts on Meetcute Plaza</h1>
                         <h2 style={{color: "lightgray", fontSize: 25}}>coming soon</h2>
-                    </div>
+                    </div> */}
             </div>
             <div className="advertisingContainer3">
                 <h1 style={{fontSize: 50}}>here's where it all begins.</h1>
